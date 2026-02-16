@@ -202,8 +202,8 @@ export default function DonatePage() {
                   <p className="text-sm text-gray-600 mb-2">
                     Contact our development team:
                   </p>
-                  <a href="mailto:giving@chrisdaviesorchestra.com" className="text-sm text-primary-600 hover:underline">
-                    giving@chrisdaviesorchestra.com
+                  <a href="mailto:giving@chrisdaviesorchestra.org" className="text-sm text-primary-600 hover:underline">
+                    giving@chrisdaviesorchestra.org
                   </a>
                 </div>
               </div>

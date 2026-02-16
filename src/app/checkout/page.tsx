@@ -335,7 +335,7 @@ export default function CheckoutPage() {
                   </div>
                   <p>
                     Please complete the transfer within 24 hours to secure your items. Email your payment receipt to
-                    <a href="mailto:store@chrisdaviesorchestra.com" className="font-semibold text-primary-700"> store@chrisdaviesorchestra.com</a>
+                    <a href="mailto:store@chrisdaviesorchestra.org" className="font-semibold text-primary-700"> store@chrisdaviesorchestra.org</a>
                     {' '}so our team can confirm and finalize your order.
                   </p>
                 </div>
@@ -423,7 +423,7 @@ export default function CheckoutPage() {
 
             <div className="rounded-lg bg-gray-50 p-4 text-sm text-gray-600">
               <p className="font-semibold text-gray-800 mb-1">Need help?</p>
-              <p>Email <a href="mailto:store@chrisdaviesorchestra.com" className="text-primary-600">store@chrisdaviesorchestra.com</a> or call +234 800 000 0000.</p>
+              <p>Email <a href="mailto:store@chrisdaviesorchestra.org" className="text-primary-600">store@chrisdaviesorchestra.org</a> or call +234 800 000 0000.</p>
             </div>
 
             <div className="space-y-2 text-xs text-gray-500">
