@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Music, Facebook, Twitter, Instagram, Youtube } from 'lucide-react'
+import Image from 'next/image'
 
 /**
  * Footer component
@@ -13,10 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <Music className="h-8 w-8 text-gold-400" />
-              <span className="font-serif text-xl font-bold">
-                ChrisDavies Orchestra
-              </span>
+               <Image src="https://www.cdorchestra.org/cdo_image/cdo_logo.png" alt="ChrisDavies Orchestra" width={130} height={130} />
             </div>
             <p className="text-gray-400 mb-4">
               Experience world-class orchestral performances that inspire and delight
