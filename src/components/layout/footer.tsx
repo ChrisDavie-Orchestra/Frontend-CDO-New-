@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Music, Facebook, Twitter, Instagram, Youtube } from 'lucide-react'
 import Image from 'next/image'
+import { Tiktok } from '@/components/icons/tiktok'
 
 /**
  * Footer component
@@ -32,6 +33,9 @@ export function Footer() {
               </a>
               <a href="https://youtube.com/@chrisdaviesorchestra" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Youtube className="h-5 w-5" />
+              </a>
+              <a href="https://tiktok.com/@chrisdaviesorchestra" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Tiktok className="h-5 w-5" />
               </a>
             </div>
           </div>
