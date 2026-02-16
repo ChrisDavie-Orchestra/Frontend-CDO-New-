@@ -7,7 +7,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['localhost', 'chrisdaviesorchestra.com'],
+    domains: ['localhost', 'cdorchestra.com', 'www.cdorchestra.com'],
     remotePatterns: [
       {
         protocol: 'https',

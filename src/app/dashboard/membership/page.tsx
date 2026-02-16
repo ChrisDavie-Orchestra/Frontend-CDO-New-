@@ -56,7 +56,7 @@ export default function MembershipPage() {
               <div className="flex-1">
                 <h2 className="text-3xl font-bold mb-2">Active Member</h2>
                 <p className="text-primary-100 mb-4">
-                  Thank you for being a valued member of the Chris Davies Orchestra community!
+                  Thank you for being a valued member of the ChrisDavies Orchestra community!
                 </p>
                 <div className="flex items-center gap-6 text-sm">
                   <div>

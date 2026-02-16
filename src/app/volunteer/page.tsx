@@ -68,7 +68,7 @@ export default function VolunteerDashboard() {
             <h1 className="font-serif text-3xl font-bold">Volunteer Dashboard</h1>
           </div>
           <p className="text-gray-600">
-            Welcome back, {user?.firstName}! Thank you for your dedication to Chris Davies Orchestra.
+            Welcome back, {user?.firstName}! Thank you for your dedication to ChrisDavies Orchestra.
           </p>
           <div className="mt-4 bg-green-50 border border-green-200 rounded-lg p-4">
             <p className="text-sm text-green-800">

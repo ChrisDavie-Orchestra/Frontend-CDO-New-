@@ -13,6 +13,13 @@ export default function AdminDashboardPage() {
     { label: 'Donations', value: '$12,450', icon: Heart, change: '+23%', trend: 'up', href: '/admin/donations' },
   ]
 
+  const quickActions = [
+    { title: 'Manage Events', description: 'Create and edit concert events', icon: Calendar, href: '/admin/events' },
+    { title: 'Manage Products', description: 'Update store inventory', icon: ShoppingBag, href: '/admin/products' },
+    { title: 'Manage Users', description: 'View and manage user accounts', icon: Users, href: '/admin/users' },
+    { title: 'Team Management', description: 'Manage executives, board, and musicians', icon: Users, href: '/admin/team' },
+  ]
+
   const recentActivity = [
     { type: 'user', message: 'New user registered: john@example.com', time: '5 min ago', color: 'bg-blue-100 text-blue-600' },
     { type: 'order', message: 'New order #1234 placed', time: '12 min ago', color: 'bg-green-100 text-green-600' },
@@ -39,7 +46,21 @@ export default function AdminDashboardPage() {
         <p className="text-gray-600">Welcome back! Here&apos;s what&apos;s happening today.</p>
       </div>
 
-      {/* Stats Grid */}
+      {/* Quick Actions */}
+        <div className="mb-8">
+          <h2 className="font-serif text-xl font-bold mb-6">Quick Actions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {quickActions.map((action) => (
+              <Link key={action.title} href={action.href} className="card hover:shadow-md transition-all hover:scale-105 p-6">
+                <action.icon className="h-8 w-8 text-primary-600 mb-4" />
+                <h3 className="font-semibold mb-2">{action.title}</h3>
+                <p className="text-sm text-gray-600">{action.description}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {stats.map((stat) => (
           <Link key={stat.label} href={stat.href} className="card hover:shadow-md transition-all hover:scale-105">
@@ -108,6 +129,9 @@ export default function AdminDashboardPage() {
               <Link href="/admin/products/new" className="btn-outline w-full text-sm">
                 Add Product
               </Link>
+              <Link href="/admin/team" className="btn-outline w-full text-sm">
+                Manage Team
+              </Link>
               <Link href="/admin/news/new" className="btn-outline w-full text-sm">
                 Write Article
               </Link>
@@ -135,12 +159,12 @@ export default function AdminDashboardPage() {
                 <span className="text-green-600 font-semibold">●  Healthy</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">API</span>
-                <span className="text-green-600 font-semibold">● Online</span>
+                <span className="text-gray-600">API Server</span>
+                <span className="text-green-600 font-semibold">●  Running</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Storage</span>
-                <span className="text-gray-600">45% Used</span>
+                <span className="text-gray-600">Last Backup</span>
+                <span className="text-blue-600 font-semibold">2 hours ago</span>
               </div>
             </div>
           </div>

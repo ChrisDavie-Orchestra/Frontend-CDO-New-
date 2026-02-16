@@ -15,7 +15,7 @@ export function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <Music className="h-8 w-8 text-gold-400" />
               <span className="font-serif text-xl font-bold">
-                Chris Davies Orchestra
+                ChrisDavies Orchestra
               </span>
             </div>
             <p className="text-gray-400 mb-4">
@@ -94,7 +94,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Chris Davies Orchestra. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ChrisDavies Orchestra. All rights reserved.</p>
         </div>
       </div>
     </footer>

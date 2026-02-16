@@ -1,6 +1,6 @@
-# Chris Davies Orchestra - Frontend
+# ChrisDavies Orchestra - Frontend
 
-Modern Next.js 14 frontend application for the Chris Davies Orchestra website.
+Modern Next.js 14 frontend application for the ChrisDavies Orchestra website.
 
 ## 🚀 Features
 
@@ -54,7 +54,7 @@ Edit `.env.local`:
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1
 NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY=pk_test_your_key
-NEXT_PUBLIC_APP_NAME=Chris Davies Orchestra
+NEXT_PUBLIC_APP_NAME=ChrisDavies Orchestra
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
@@ -245,7 +245,7 @@ docker run -p 3000:3000 cdo-frontend
 
 ## 📄 License
 
-Copyright © 2026 Chris Davies Orchestra. All rights reserved.
+Copyright © 2026 ChrisDavies Orchestra. All rights reserved.
 
 ---
 

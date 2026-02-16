@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Chris Davies Orchestra',
+  title: 'ChrisDavies Orchestra',
   description: 'Experience world-class orchestral performances',
   keywords: ['orchestra', 'classical music', 'concerts', 'performances'],
 }

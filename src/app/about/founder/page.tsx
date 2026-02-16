@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
-import { Award, Music } from 'lucide-react'
+import { Award } from 'lucide-react'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Our Conductor | Chris Davies Orchestra',
+  title: 'Our Conductor | ChrisDavies Orchestra',
   description: 'Learn about Chris Davies, our Music Director and Conductor',
 }
 
@@ -17,10 +18,10 @@ export default function ConductorPage() {
       <section className="bg-gradient-to-r from-primary-900 to-primary-700 text-white py-20">
         <div className="container">
           <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6">
-            Chris Davies
+            Christopher Davies
           </h1>
           <p className="text-xl text-primary-100">
-            Music Director & Conductor
+            Founder 
           </p>
         </div>
       </section>
@@ -32,7 +33,7 @@ export default function ConductorPage() {
             {/* Image */}
             <div className="lg:col-span-1">
               <div className="w-full aspect-square bg-gray-200 rounded-lg flex items-center justify-center sticky top-24">
-                <Music className="h-32 w-32 text-gray-400" />
+                <Image src="https://www.cdorchestra.org/cdo_image/ChristopherDavies.JPG" alt="Chris Davies" width={600} height={600} />
               </div>
             </div>
 
@@ -42,30 +43,28 @@ export default function ConductorPage() {
                 <h2 className="font-serif text-3xl font-bold mb-6">Biography</h2>
                 <div className="prose max-w-none text-gray-600 space-y-4">
                   <p>
-                    Chris Davies is an internationally acclaimed conductor known for his dynamic
-                    interpretations and innovative programming. With over 30 years of experience,
-                    he has led orchestras across Europe, Asia, and North America, earning praise
-                    from critics and audiences alike.
+                    Christopher Davies is a visionary Nigerian conductor celebrated for blending the rigor of
+                    classical tradition with the vibrant storytelling of African music. Across three 
+                    decades on the podium he has led ensembles throughout Europe, Africa, Asia, and North 
+                    America, consistently winning accolades for his imaginative interpretations.
                   </p>
                   <p>
-                    A graduate of the Royal Academy of Music in London, Chris studied under the
-                    legendary conductor Sir Colin Davis. His early career saw him serve as
-                    assistant conductor for the London Philharmonic Orchestra before taking on
-                    principal conducting positions with several regional orchestras.
+                    Trained at the Royal Academy of Music in London, Christopher Davies studied under the legendary Sir
+                    Colin Davis before serving as assistant conductor with the London Philharmonic 
+                    Orchestra. Those formative seasons refined his craft and opened doors to principal 
+                    conducting posts with regional orchestras on two continents.
                   </p>
                   <p>
-                    In 2001, Chris founded the Chris Davies Orchestra with a vision to create an
-                    ensemble that would bridge the gap between traditional classical repertoire
-                    and contemporary works. Under his leadership, the orchestra has commissioned
-                    over 50 new compositions and has become known for its adventurous programming
-                    and commitment to music education.
+                    In 2020 he founded the ChrisDavies Orchestra to bridge traditional repertoire with
+                    contemporary African voices. Under his leadership the ensemble has commissioned more 
+                    than 50 new works, premiered cross-genre collaborations, and established a mentorship 
+                    pipeline that now supports over 120 young musicians.
                   </p>
                   <p>
-                    Chris is particularly passionate about making classical music accessible to
-                    younger audiences. He has developed numerous educational programs and
-                    regularly conducts family concerts and school workshops. His innovative
-                    approach to audience engagement has been recognized with several awards,
-                    including the National Arts Education Award in 2019.
+                    Christopher Davies remains passionate about making classical music accessible. He curates family 
+                    concerts, designs school residencies, and speaks frequently about the power of music to
+                    inspire peace, focus, and excellence. That commitment to education has earned multiple 
+                    honors, including the National Arts Education Award (2019).
                   </p>
                 </div>
               </div>

@@ -202,7 +202,7 @@ export default function EventDetailPage() {
               <div className="pt-6 border-t">
                 <h2 className="text-2xl font-bold mb-4">About This Event</h2>
                 <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                  {event.description || 'Join us for an unforgettable evening of classical music performed by the Chris Davies Orchestra.'}
+                  {event.description || 'Join us for an unforgettable evening of classical music performed by the ChrisDavies Orchestra.'}
                 </p>
               </div>
 

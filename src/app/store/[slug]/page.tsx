@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useQuery } from '@tanstack/react-query'
 import { useParams, useRouter } from 'next/navigation'
 import { ShoppingCart, ArrowLeft, Check } from 'lucide-react'
@@ -103,14 +104,23 @@ export default function ProductDetailPage() {
   return (
     <div className="min-h-screen py-16">
       <div className="container">
-        {/* Back Button */}
-        <button
-          onClick={() => router.back()}
-          className="flex items-center text-gray-600 hover:text-primary-600 mb-8"
-        >
-          <ArrowLeft className="h-5 w-5 mr-2" />
-          Back to Store
-        </button>
+        {/* Top Actions */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
+          <button
+            onClick={() => router.back()}
+            className="flex items-center text-gray-600 hover:text-primary-600"
+          >
+            <ArrowLeft className="h-5 w-5 mr-2" />
+            Back to Store
+          </button>
+          <Link
+            href="/cart"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-600 px-6 py-2 text-white font-semibold shadow hover:bg-primary-700 transition-colors"
+          >
+            <ShoppingCart className="h-5 w-5" />
+            View Cart
+          </Link>
+        </div>
 
         {/* Product Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

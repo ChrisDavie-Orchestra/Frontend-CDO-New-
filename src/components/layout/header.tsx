@@ -2,13 +2,11 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X, Music, ChevronDown, User, LogOut, ShoppingBag, Heart } from 'lucide-react'
+import { Menu, X, ChevronDown, User, LogOut, ShoppingBag, Heart } from 'lucide-react'
 import { useAuth } from '@/contexts/auth-context'
+import Image from 'next/image'
 
-/**
- * Header component
- * Main navigation with responsive mobile menu and stable dropdown
- */
+
 export function Header() {
   const { user, isAuthenticated, isAdmin, logout, getDashboardPath } = useAuth()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -20,7 +18,7 @@ export function Header() {
     { name: 'Our Story', href: '/about' },
     { name: 'Musicians', href: '/about/musicians' },
     { name: 'Executives', href: '/about/executives' },
-    { name: 'Our Conductor', href: '/about/conductor' },
+    // { name: 'Our Conductor', href: '/about/conductor' },
   ]
 
   const discoverLinks = [
@@ -33,11 +31,9 @@ export function Header() {
 
   return (
     <header className="bg-white sticky top-0 z-50">
-      {/* Utility Bar - LSO Style */}
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end items-center h-10 gap-6">
-            {/* My Account */}
             <Link 
               href={isAuthenticated ? getDashboardPath() : "/account"}
               className="flex items-center gap-1.5 text-sm text-gray-700 hover:text-primary-600 transition-colors font-medium"
@@ -46,7 +42,6 @@ export function Header() {
               My Account
             </Link>
 
-            {/* Shop */}
             <Link 
               href="/store" 
               className="flex items-center gap-1.5 text-sm text-gray-700 hover:text-primary-600 transition-colors font-medium"
@@ -55,7 +50,6 @@ export function Header() {
               Shop
             </Link>
 
-            {/* Donate */}
             <Link 
               href="/donate" 
               className="btn-primary text-sm px-4 py-1.5 flex items-center gap-1.5"
@@ -67,24 +61,17 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main Navigation */}
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-100">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+        <div className="flex justify-between items-center min-h-[1rem] py-2"> 
           <Link href="/" className="flex items-center space-x-2">
-            <Music className="h-8 w-8 text-primary-600" />
-            <span className="font-serif text-xl font-bold text-gray-900">
-              Chris Davies Orchestra
-            </span>
+            <Image src="https://www.cdorchestra.org/cdo_image/cdo_logo2.png" alt="ChrisDavies Orchestra" width={130} height={130} />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-gray-700 hover:text-primary-600 transition-colors">
               Home
             </Link>
 
-            {/* Discover Mega Menu */}
             <div
               className="relative group"
               onMouseEnter={() => setDiscoverDropdownOpen(true)}
@@ -114,7 +101,6 @@ export function Header() {
               )}
             </div>
 
-            {/* About Dropdown - Stable on hover */}
             <div
               className="relative group"
               onMouseEnter={() => setAboutDropdownOpen(true)}
@@ -153,7 +139,6 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <button
             type="button"
             className="md:hidden"
@@ -167,7 +152,6 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-2">
             <Link
@@ -178,7 +162,6 @@ export function Header() {
               Home
             </Link>
             
-            {/* Discover Section */}
             <div className="py-2">
               <p className="font-semibold text-gray-900 mb-2">Discover</p>
               <div className="pl-4 space-y-2">
@@ -195,7 +178,6 @@ export function Header() {
               </div>
             </div>
             
-            {/* About Section */}
             <div className="py-2">
               <p className="font-semibold text-gray-900 mb-2">About</p>
               <div className="pl-4 space-y-2">

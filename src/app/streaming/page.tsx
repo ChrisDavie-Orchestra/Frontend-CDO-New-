@@ -25,7 +25,7 @@ export default function StreamingPage() {
           </div>
           <h1 className="font-serif text-5xl font-bold mb-4">Streaming & Online</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Watch and listen to the Chris Davies Orchestra from the comfort of your home. 
+            Watch and listen to the ChrisDavies Orchestra from the comfort of your home. 
             Experience our concerts live or on-demand.
           </p>
         </div>

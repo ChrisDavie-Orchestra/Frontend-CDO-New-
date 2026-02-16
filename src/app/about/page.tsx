@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About Us | ChrisDavies Orchestra',
@@ -48,8 +49,15 @@ export default function AboutPage() {
                 communities across Nigeria.
               </p>
             </div>
-            <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-              <p className="text-gray-500">Orchestra Image Placeholder</p>
+            <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center overflow-hidden">
+              <Image 
+                src="https://www.cdorchestra.org/cdo_image/IMG-20230504-WA0017.jpg" 
+                alt="CDO Orchestra" 
+                width={800}
+                height={600}
+                loading="lazy"
+                className="object-cover w-full h-full"
+              />
             </div>
           </div>
 
@@ -119,7 +127,7 @@ export default function AboutPage() {
                 <p className="text-primary-600 font-semibold mb-6">Founder & Music Director</p>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    In 2001, Chris Davies founded the Chris Davies Orchestra with a bold vision: 
+                    In 2001, Chris Davies founded the ChrisDavies Orchestra with a bold vision: 
                     to create an ensemble that would bridge the gap between classical tradition 
                     and contemporary innovation, making orchestral music accessible and relevant 
                     to modern audiences.
@@ -142,17 +150,21 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="mt-6">
-                  <a href="/about/conductor" className="btn-primary">
+                  <a href="/about/founder" className="btn-primary">
                     Read Full Biography
                   </a>
                 </div>
               </div>
               <div className="order-1 lg:order-2">
-                <div className="bg-gray-200 rounded-xl h-[500px] flex items-center justify-center shadow-lg">
-                  <div className="text-center">
-                    <p className="text-gray-500 text-lg mb-2">Founder Image</p>
-                    <p className="text-gray-400 text-sm">Add founder photo here</p>
-                  </div>
+                <div className="bg-gray-200 rounded-xl h-[500px] w-full overflow-hidden shadow-lg">
+                  <Image
+                    src="https://www.cdorchestra.org/cdo_image/ChristopherDavies.JPG"
+                    alt="Founder"
+                    width={600}
+                    height={600}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
@@ -164,19 +176,19 @@ export default function AboutPage() {
               Meet Our Conductor
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-                <p className="text-gray-500">Conductor Image Placeholder</p>
+              <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center overflow-hidden shadow-lg">
+                <Image src="https://www.cdorchestra.org/cdo_image/IMG_3462-1 - Chukwuma Onyibor.jpg" alt="Founder" width={600} height={600} loading="lazy" className="h-full w-full object-cover object-top" />
               </div>
               <div>
-                <h3 className="font-serif text-2xl font-bold mb-4">Chris Davies</h3>
+                <h3 className="font-serif text-2xl font-bold mb-4">Chukwuma Onyibor</h3>
                 <p className="text-primary-600 font-semibold mb-4">Music Director & Conductor</p>
                 <p className="text-gray-600 mb-4">
-                  Chris Davies is an internationally acclaimed conductor known for his dynamic
+                  Chukwuma Onyibor is an internationally acclaimed conductor known for his dynamic
                   interpretations and innovative programming. With over 30 years of experience,
                   he has led orchestras across Europe, Asia, and North America.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  A graduate of the Royal Academy of Music, Chris has received numerous awards
+                  A graduate of the Royal Academy of Music, Chukwuma has received numerous awards
                   for his contributions to classical music, including the prestigious Conductor
                   of the Year award in 2018.
                 </p>

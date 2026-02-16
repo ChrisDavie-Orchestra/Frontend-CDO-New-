@@ -105,9 +105,12 @@ export default function CartPage() {
                     <span className="font-bold text-primary-600">{formatCurrency(total)}</span>
                   </div>
                 </div>
-                <button className="btn-primary w-full mb-3">
+                <Link
+                  href="/checkout"
+                  className="btn-primary w-full mb-3 flex items-center justify-center gap-2"
+                >
                   Proceed to Checkout
-                </button>
+                </Link>
                 <Link href="/store" className="btn-outline w-full">
                   Continue Shopping
                 </Link>

@@ -41,8 +41,8 @@ export default function StorePage() {
       {/* Search */}
       <section className="py-8 bg-gray-50">
         <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <div className="relative">
+          <div className="max-w-3xl mx-auto flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               <input
                 type="text"
@@ -52,6 +52,13 @@ export default function StorePage() {
                 className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
             </div>
+            <Link
+              href="/cart"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 text-white font-semibold shadow hover:bg-primary-700 transition-colors"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              View Cart
+            </Link>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ import { Save, Settings as SettingsIcon } from 'lucide-react'
  */
 export default function AdminSettingsPage() {
   const [settings, setSettings] = useState({
-    siteName: 'Chris Davies Orchestra',
+    siteName: 'ChrisDavies Orchestra',
     siteUrl: 'https://chrisdaviesorchestra.com',
     contactEmail: 'info@chrisdaviesorchestra.com',
     supportEmail: 'support@chrisdaviesorchestra.com',

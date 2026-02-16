@@ -26,6 +26,7 @@ export function AdminSidebar() {
     { name: 'Events', href: '/admin/events', icon: Calendar },
     { name: 'Products', href: '/admin/products', icon: ShoppingBag },
     { name: 'Users', href: '/admin/users', icon: Users },
+    { name: 'Manage Team', href: '/admin/team', icon: Users },
     { name: 'News', href: '/admin/news', icon: FileText },
     { name: 'Media', href: '/admin/media', icon: Image },
     { name: 'Donations', href: '/admin/donations', icon: Heart },

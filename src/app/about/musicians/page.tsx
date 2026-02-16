@@ -1,9 +1,19 @@
-import { Metadata } from 'next'
-import { Music2 } from 'lucide-react'
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Our Musicians | Chris Davies Orchestra',
-  description: 'Meet the talented musicians of the Chris Davies Orchestra',
+import { Music2 } from 'lucide-react'
+import { useQuery } from '@tanstack/react-query';
+import { api } from '@/lib/api';
+import Image from 'next/image';
+
+interface Musician {
+  id: string;
+  name: string;
+  role: string;
+  section?: string;
+  imageUrl?: string;
+  title?: {
+    name: string;
+  };
 }
 
 /**
@@ -11,43 +21,28 @@ export const metadata: Metadata = {
  * Showcase of orchestra members
  */
 export default function MusiciansPage() {
-  // Placeholder data - replace with actual musician data from API
-  const sections = [
-    {
-      name: 'Strings',
-      musicians: [
-        { name: 'John Smith', position: 'Concertmaster', image: '' },
-        { name: 'Sarah Johnson', position: 'Principal Second Violin', image: '' },
-        { name: 'Michael Brown', position: 'Principal Viola', image: '' },
-        { name: 'Emily Davis', position: 'Principal Cello', image: '' },
-      ],
-    },
-    {
-      name: 'Woodwinds',
-      musicians: [
-        { name: 'David Wilson', position: 'Principal Flute', image: '' },
-        { name: 'Lisa Anderson', position: 'Principal Oboe', image: '' },
-        { name: 'James Taylor', position: 'Principal Clarinet', image: '' },
-        { name: 'Maria Garcia', position: 'Principal Bassoon', image: '' },
-      ],
-    },
-    {
-      name: 'Brass',
-      musicians: [
-        { name: 'Robert Martinez', position: 'Principal Horn', image: '' },
-        { name: 'Jennifer Lee', position: 'Principal Trumpet', image: '' },
-        { name: 'William Thomas', position: 'Principal Trombone', image: '' },
-        { name: 'Patricia White', position: 'Principal Tuba', image: '' },
-      ],
-    },
-    {
-      name: 'Percussion',
-      musicians: [
-        { name: 'Christopher Harris', position: 'Principal Timpani', image: '' },
-        { name: 'Amanda Clark', position: 'Principal Percussion', image: '' },
-      ],
-    },
-  ]
+  const { data: musicians = [], isLoading } = useQuery({
+    queryKey: ['musicians'],
+    queryFn: () => api.get('/team/musicians').then(res => res.data),
+  });
+
+  // Group musicians by section
+  const musiciansBySection: Record<string, Musician[]> = musicians.reduce((acc: Record<string, Musician[]>, musician: Musician) => {
+    const section = musician.section || 'Other';
+    if (!acc[section]) {
+      acc[section] = [];
+    }
+    acc[section].push(musician);
+    return acc;
+  }, {} as Record<string, Musician[]>);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -68,24 +63,45 @@ export default function MusiciansPage() {
       {/* Musicians by Section */}
       <section className="py-16">
         <div className="container">
-          {sections.map((section) => (
-            <div key={section.name} className="mb-16">
-              <h2 className="font-serif text-3xl font-bold mb-8 text-center">
-                {section.name}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {section.musicians.map((musician) => (
-                  <div key={musician.name} className="card text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-                      <Music2 className="h-12 w-12 text-gray-400" />
-                    </div>
-                    <h3 className="font-serif text-xl font-bold mb-2">{musician.name}</h3>
-                    <p className="text-primary-600 font-semibold">{musician.position}</p>
-                  </div>
-                ))}
-              </div>
+          {Object.keys(musiciansBySection).length === 0 ? (
+            <div className="text-center py-12">
+              <Music2 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+              <p className="text-gray-600">No musicians listed at this time.</p>
             </div>
-          ))}
+          ) : (
+            Object.entries(musiciansBySection).map(([sectionName, sectionMusicians]) => (
+              <div key={sectionName} className="mb-16">
+                <h2 className="font-serif text-3xl font-bold mb-8 text-center">
+                  {sectionName}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {sectionMusicians.map((musician: Musician) => (
+                    <div key={musician.id} className="card text-center">
+                      {musician.imageUrl ? (
+                        <div className="w-32 h-32 mx-auto mb-4 relative rounded-full overflow-hidden">
+                          <Image
+                            src={musician.imageUrl}
+                            alt={musician.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-32 h-32 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+                          <Music2 className="h-12 w-12 text-gray-400" />
+                        </div>
+                      )}
+                      <h3 className="font-serif text-xl font-bold mb-2">{musician.name}</h3>
+                      <p className="text-primary-600 font-semibold">{musician.role}</p>
+                      {musician.title && (
+                        <p className="text-sm text-gray-500 mt-1">{musician.title.name}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </section>
 

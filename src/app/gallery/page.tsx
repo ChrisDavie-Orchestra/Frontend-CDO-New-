@@ -56,10 +56,21 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Tabs */}
       <section className="bg-white border-b">
         <div className="container">
           <div className="flex gap-8">
+            <button
+              onClick={() => setActiveTab('youtube')}
+              className={`flex items-center gap-2 px-6 py-4 font-semibold transition-colors border-b-2 ${
+                activeTab === 'youtube'
+                  ? 'border-primary-600 text-primary-600'
+                  : 'border-transparent text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <Youtube className="h-5 w-5" />
+              YouTube Channel
+            </button>
+            
             <button
               onClick={() => setActiveTab('image')}
               className={`flex items-center gap-2 px-6 py-4 font-semibold transition-colors border-b-2 ${
@@ -82,22 +93,10 @@ export default function GalleryPage() {
               <Video className="h-5 w-5" />
               Videos
             </button>
-            <button
-              onClick={() => setActiveTab('youtube')}
-              className={`flex items-center gap-2 px-6 py-4 font-semibold transition-colors border-b-2 ${
-                activeTab === 'youtube'
-                  ? 'border-primary-600 text-primary-600'
-                  : 'border-transparent text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              <Youtube className="h-5 w-5" />
-              YouTube Channel
-            </button>
           </div>
         </div>
       </section>
 
-      {/* Gallery Grid */}
       <section className="py-16">
         <div className="container">
           {activeTab === 'youtube' ? (
