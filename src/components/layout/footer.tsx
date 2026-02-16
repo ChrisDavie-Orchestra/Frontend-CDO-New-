@@ -14,7 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-               <Image src="https://www.cdorchestra.org/cdo_image/cdo_logo.png" alt="ChrisDavies Orchestra" width={130} height={130} />
+               <Image src="https://www.cdorchestra.org/cdo_image/cd-logo transparent.png" alt="ChrisDavies Orchestra" width={130} height={130} />
             </div>
             <p className="text-gray-400 mb-4">
               Experience world-class orchestral performances that inspire and delight
