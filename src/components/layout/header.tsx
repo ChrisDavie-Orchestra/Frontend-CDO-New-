@@ -64,7 +64,7 @@ export function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-100">
         <div className="flex justify-between items-center min-h-[1rem] py-2"> 
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="https://www.cdorchestra.org/cdo_image/cdo_logo2.png" alt="ChrisDavies Orchestra" width={130} height={130} />
+            <Image src="https://www.cdorchestra.org/cdo_image/cdo_logo2.jpg" alt="ChrisDavies Orchestra" width={130} height={130} />
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
